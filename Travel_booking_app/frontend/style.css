@@ -1,0 +1,124 @@
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #f7f7fb;
+}
+
+/* LAYOUT */
+.layout {
+  display: flex;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 200px;
+  height: 150vh;
+  background: linear-gradient(180deg, #cdb4db, #a2d2ff);
+  padding: 20px;
+  color: white;
+}
+
+.sidebar h2 {
+  margin-bottom: 30px;
+}
+
+.sidebar a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  margin: 15px 0;
+  font-weight: bold;
+}
+
+/* MAIN */
+.main {
+  flex: 1;
+  padding: 30px;
+}
+
+/* FORM BOX */
+.form-box {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  margin-bottom: 30px;
+}
+
+input {
+  width: 90%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+button {
+  background: #a2d2ff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* CARDS */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+}
+
+.card {
+  background: #fff;
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.card p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #555;
+}
+
+.card b {
+  color: #333;
+}
+
+
+
+
+.auth-body {
+  background: linear-gradient(135deg, #cdb4db, #a2d2ff);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial;
+}
+
+.auth-box {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+
+.auth-box input {
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+.auth-box button {
+  background: #a2d2ff;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+}

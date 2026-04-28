@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Travel Guide</title>
+
+    <!-- jQuery Mobile CSS -->
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+
+    <!-- jQuery Mobile JS -->
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial;
+        }
+
+        .card {
+            padding: 15px;
+            margin: 12px 0;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #f0f4ff, #e0f7fa);
+            box-shadow: 0 5px 12px rgba(0,0,0,0.15);
+            transition: transform 0.2s;
+        }
+
+        .card:active {
+            transform: scale(0.98);
+        }
+
+        h2 {
+            color: #2c3e50;
+        }
+
+        .price {
+            color: #2e7d32;
+            font-weight: bold;
+        }
+
+        .btn-main {
+            background: #2563eb !important;
+            color: white !important;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- HOME -->
+<div data-role="page" id="home">
+
+    <div data-role="header" data-theme="b">
+        <h1>Travel Guide ✈️</h1>
+    </div>
+
+    <div data-role="content">
+        <h2>Explore the World 🌍</h2>
+        <p>Plan your perfect trip with us.</p>
+
+        <a href="#destinations" data-role="button" class="btn-main">Destinations</a>
+        <a href="#packages" data-role="button" class="btn-main">Packages</a>
+        <a href="#booking" data-role="button" class="btn-main">Book Now</a>
+    </div>
+
+</div>
+
+<!-- DESTINATIONS -->
+<div data-role="page" id="destinations">
+
+    <div data-role="header" data-theme="b">
+        <h1>Top Destinations</h1>
+    </div>
+
+    <div data-role="content">
+
+        <div class="card">
+            <h3>Goa 🏖️</h3>
+            <p>Beaches, nightlife & fun.</p>
+        </div>
+
+        <div class="card">
+            <h3>Manali 🏔️</h3>
+            <p>Snowy mountains & peace.</p>
+        </div>
+
+        <div class="card">
+            <h3>Jaipur 🏰</h3>
+            <p>Royal heritage & culture.</p>
+        </div>
+
+        <a href="#home" data-role="button">Back</a>
+    </div>
+
+</div>
+
+<!-- PACKAGES -->
+<div data-role="page" id="packages">
+
+    <div data-role="header" data-theme="b">
+        <h1>Travel Packages</h1>
+    </div>
+
+    <div data-role="content">
+
+        <div class="card">
+            <h3>Goa Package</h3>
+            <p>3 Days / 2 Nights</p>
+            <p class="price">₹7999</p>
+        </div>
+
+        <div class="card">
+            <h3>Manali Package</h3>
+            <p>5 Days / 4 Nights</p>
+            <p class="price">₹12999</p>
+        </div>
+
+        <div class="card">
+            <h3>Jaipur Package</h3>
+            <p>2 Days / 1 Night</p>
+            <p class="price">₹5999</p>
+        </div>
+
+        <a href="#home" data-role="button">Back</a>
+    </div>
+
+</div>
+
+<!-- BOOKING FORM -->
+<div data-role="page" id="booking">
+
+    <div data-role="header" data-theme="b">
+        <h1>Book Your Trip</h1>
+    </div>
+
+    <div data-role="content">
+
+        <label>Name:</label>
+        <input type="text" id="name">
+
+        <label>Destination:</label>
+        <select id="destination">
+            <option>Goa</option>
+            <option>Manali</option>
+            <option>Jaipur</option>
+        </select>
+
+        <label>Date:</label>
+        <input type="date" id="date">
+
+        <a href="#" data-role="button" class="btn-main" onclick="bookTrip()">Submit</a>
+
+        <a href="#home" data-role="button">Back</a>
+    </div>
+
+</div>
+
+</body>
+
+<script>
+function bookTrip() {
+    var name = document.getElementById("name").value;
+    var dest = document.getElementById("destination").value;
+    var date = document.getElementById("date").value;
+
+    if(name === "" || date === "") {
+        alert("Please fill all fields");
+        return;
+    }
+
+    alert("✅ Booking Confirmed!\n\nName: " + name +
+          "\nDestination: " + dest +
+          "\nDate: " + date);
+}
+</script>
+
+</html>

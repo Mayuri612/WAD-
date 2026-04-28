@@ -1,0 +1,19 @@
+{
+  "users": [
+    {
+      "name": "Mayuri Jagtap",
+      "email": "mayurijagtap6125@gmail.com",
+      "phone": "1234567890",
+      "city": "Nashik",
+      "id": "FaAbu-pb2l8"
+    },
+    {
+      "name": "xyz",
+      "email": "xyz12@gmail.com",
+      "phone": "4356728986",
+      "city": "mumbai",
+      "id": "kV9bXGmm840"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
