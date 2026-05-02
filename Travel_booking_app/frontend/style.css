@@ -122,3 +122,19 @@ button {
   border-radius: 10px;
   cursor: pointer;
 }
+
+#logoutBtn {
+  background: #d8d5f0; /* soft pastel pink */
+  color: #333;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.3s ease;
+}
+
+#logoutBtn:hover {
+  background: #ffb6b9;
+  transform: scale(1.05);
+}

@@ -8,7 +8,8 @@ exports.createBooking = async (req, res) => {
 
 // READ
 exports.getBookings = async (req, res) => {
-  const data = await Booking.find();
+  const userId = req.query.userId;
+  const data = await Booking.find({ userId });
   res.json(data);
 };
 

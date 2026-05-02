@@ -1,16 +1,5 @@
 const User = require("../models/User");
 
-// SIGNUP
-/*exports.signup = async (req, res) => {
-  try {
-    const user = new User(req.body);
-    await user.save();
-    res.json({ message: "Signup Successful ✔" });
-  } catch (err) {
-    res.status(500).json({ error: "Signup Error ❌" });
-  }
-};*/
-
 
 exports.signup = async (req, res) => {
   try {
@@ -32,7 +21,6 @@ exports.signup = async (req, res) => {
 // LOGIN
 exports.login = async (req, res) => {
   try {
-    //const user = await User.findOne(req.body);
 
     const { email, password } = req.body;
     const user = await User.findOne({ email, password });

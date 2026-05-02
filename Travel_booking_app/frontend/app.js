@@ -1,3 +1,9 @@
+//authentication
+const user = localStorage.getItem("user");
+if (!user && !window.location.pathname.includes("login.html") && !window.location.pathname.includes("signup.html")) {
+  window.location.href = "login.html";
+}
+
 // CONFIG
 const API_URL = "http://localhost:3000/api/bookings";
 
@@ -45,7 +51,7 @@ async function login() {
   }
 }
 
-// CREATE BOOKING (C)
+// CREATE BOOKING
 
 async function bookTravel() {
   const name = document.getElementById("name").value;
@@ -57,7 +63,10 @@ async function bookTravel() {
     return;
   }
 
-  const data = { name, destination, date };
+  
+  const user = JSON.parse(localStorage.getItem("user"));
+
+  const data = { name, destination, date, userId: user._id }; 
 
   try {
     await fetch(API_URL, {
@@ -82,14 +91,16 @@ async function bookTravel() {
 }
 
 
-// LOAD BOOKINGS (R)
+// LOAD BOOKINGS 
 const container = document.getElementById("bookings");
 
 async function loadBookings() {
   if (!container) return;
 
   try {
-    const res = await fetch(API_URL);
+    const user = JSON.parse(localStorage.getItem("user")); //new line for user id
+    const res = await fetch(`${API_URL}?userId=${user._id}`); //new line user id
+    //const res = await fetch(API_URL);
     const data = await res.json();
 
     container.innerHTML = "";
@@ -122,7 +133,7 @@ async function loadBookings() {
 
 
 
-// UPDATE BOOKING (U)
+// UPDATE BOOKING
 async function editBooking(id, oldName, oldDestination, oldDate) {
 
   const name = prompt("Enter new name:", oldName);
@@ -153,8 +164,8 @@ async function editBooking(id, oldName, oldDestination, oldDate) {
 }
 
 
-/
-// DELETE BOOKING (D)
+
+// DELETE BOOKING
 
 async function deleteBooking(id) {
   try {
@@ -169,6 +180,12 @@ async function deleteBooking(id) {
     console.log(error);
     alert("Error deleting booking ❌");
   }
+}
+
+function logout() {
+  localStorage.removeItem("user"); 
+  alert("Logged out successfully 👋");
+  window.location.href = "login.html"; 
 }
 
 // AUTO LOAD (READ ON VIEW PAGE)
